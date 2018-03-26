@@ -1,128 +1,177 @@
 html, body {
-    font-size: 12px;
+	font-size: 14px;
+	font-family: monospace, 'Courier New', Courier, sans-serif;
 }
 
 body {
-    width: 95%;
-    max-width: 1000px;
-    min-width: 200px;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 10px;
+	width: 95%;
+	max-width: 1000px;
+	min-width: 150px;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 10px;
+	/* border: 1px solid black; */
+	/* background-image: url("../img/waveswing.jpg"); */
+	/* background-image: url("../img/blackwhite-wave.jpg"); */
+	background-color: ivory;
+}
+
+#currentPage {
+	background-color: lightgreen;
+	text-align: center;
+	width: 50%;
+	margin: 0 auto;
 }
 
 #mainHeader {
-    text-align: center;
+	text-align: center;
+	color: green;
 }
 
 #catchPhrase {
-    text-align: center;
-    font-size: 1.3rem;
+	text-align: center;
+	font-size: 1.3rem;
+}
+
+/* H4s INSIDE HEADERS - these are now invisible*/
+nav header, main section header {
+	border: 2px solid greenyellow;
+	/*display: inline reduces its box size*/
+	display: inline;
+}
+
+/* Inlining it makes it thinner (why?) */
+
+nav >h2, main section >h2 {
+	/*inherits inline from parent (nav header)*/
+	display: inherit;
 }
 
 /* TOP LEVEL NAV */
 nav {
-    /* Having margin left and right auto centers any element: each side tries
-    to take as much space as possible; width=90% leaves the space around */
-    width: 90%;
-    margin-left: auto;
-    margin-right: auto;
-    border: 1px solid saddlebrown;
+	/* Having margin left and right auto centers any element: each side tries to take as much space as possible; width=90% leaves the space around */
+	width: 90%;
+	margin: 0 auto;
+	/* border: 1px solid saddlebrown;this throws all off */
+	
 }
 
-ul {
-    border: 2px solid violet;
-}
-
-#home-nav header, main section header {
-    border: 2px solid greenyellow;
-    /*display: inline reduces its box size*/
-    display: inline;
-}
-
-/* Inlining it makes it thinner (why?) */
-#home-nav header > h4, main section header > h4 {
-    /*inherits inline from parent (nav header)*/
-    display: inherit;
-}
-
-/* NAV FLEX */
-.flex-container1 {
-    display: flex;
-    list-style-type: none;
-    /* no bullets */
-    /* border: 2px solid blue; */
-    /* align-items: flex-end; */
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-    /*apparently ul adds the indentation, therefore padding = 0 is needed*/
-    padding: 0;
+/* nav FLEX*/
+ul.flex-container1 {
+	display: flex;
+	list-style-type: none;/* no bullets */
+	/* border: 2px solid blue; */
+	flex-wrap: wrap;
+	/*apparently ul adds the indentation, therefore padding = 0 is needed*/
+	padding: 0;
+	/* border: 2px solid violet; */
 }
 
 .flex-container1 li {
-    flex: 0.1 0 70px;
-    border: 1px dashed red;
-
-    /*margin affects from outside*/
-    margin: 5px;
-    
-    /*padding affects from inside*/
-    padding: 5px;
-    text-align: center;
+	flex: 1 0 auto;
+	/* border: 1px dashed aqua; */
+	text-align: center;
 }
 
+li.nav-li a{
+	/* border: 1px dashed red; */
+	text-decoration: none;
+	/*padding affects from inside*/
+	padding: 5px;
+	display: block;
+	background-color: #3b4e9a;
+	color: white;
+}
+
+li.nav-li a:hover {
+	background-color: lightblue;
+}
+
+/* ARTICLE */
+article {
+	background-color: greenyellow;
+	margin: 0.8rem 0;
+}
+article.mainArticle > h2 {
+	/* background-color: red; */
+	color: blue;
+	font-size: 1rem;
+	display: inline;
+	margin-right: auto;
+	margin-left: 1.5rem;
+}
 /* DIV FLEX */
+
 .flex-container2 {
-    display: flex;
-    border: 2px solid blue;
-    padding: 10px;
-    flex-wrap: wrap;
+	display: flex;
+	/* border: 2px solid blue; */
+	/* padding: 10px; */
+	flex-flow: row wrap;
+	margin: 0 auto;
+	align-content: center;
+	align-items: center;
 
-    align-content: center;
 }
 
-.flex-container2 div{
-    border: 1px dashed red;
-    padding: 10px;
-
-    margin: auto;
-    width: 45%;
-    text-align: center;
+.flex-container2 > p, .flex-container2 > img {
+	/* border: 1px dashed red; */
+	padding: 0.5rem 1rem 1rem;
+	margin: inherit;
+	width: 45%;
+	/* text-align: center; */
+	flex: 1 0 200px;
+	max-width: 400px;
+	font-weight: 700;
+	/* min-width: 400px */
 }
-
-.flex-container2 img {
-    /* max-width: 400px;
-    min-width: 75px; */
-    /* width: inherit;
-    height: inherit; */
-    width: 100%;
-    /* height: 400px; */
-} 
 
 /* Selects direct descendent of type section every 2n */
-/* Flips order of text and image */
-main section:nth-of-type(2n) > div {
-    flex-direction: row-reverse;
-    /* background-color: lightcoral; */
+/* Flips order of text and image. Automatically reorganizes text - image order in article */
+main article:nth-of-type(2n) div.alternateSide {
+	flex-direction: row-reverse;
+	/* background-color: lightcoral; */
 }
 
-/* https://developer.paciellogroup.com/blog/2012/05/html5-accessibility-chops-hidden-and-aria-hidden/ */
-header.invisibleHeader {
-     clip-path: inset(100%);
-     clip: rect(1px 1px 1px 1px); /* IE 6/7 */
-      clip: rect(1px, 1px, 1px, 1px);
-      height: 1px;
-      overflow: hidden;
-      position: absolute;
-      white-space: nowrap; /* added line */
-      width: 1px;
- }
+main article:nth-of-type(n) div.oppositeSide {
+	flex-direction: row-reverse;
+}
 
- header.offscreen:focus
- {
-position:relative;
- clip:auto;
- width:auto;
- height:auto;
- overflow:auto;
- }
+.toTop {
+	position:fixed; 
+	bottom: 0; 
+	right: 1%; 
+	font-size: 0.8rem;
+}
+.toTop > a {
+	background-color: #0e050a63;
+	color: #ffffff;
+	text-decoration: none;
+}
+ 
+footer {
+	width: 30%;
+	margin: 0 auto;
+}
+/* ASIDE */
+/* https://developer.paciellogroup.com/blog/2012/05/html5-accessibility-chops-hidden-and-aria-hidden/ */
+
+.invisibleHeader {
+	clip-path: inset(100%);
+	clip: rect(1px 1px 1px 1px);
+	/* IE 6/7 */
+	clip: rect(1px, 1px, 1px, 1px);
+	height: 1px;
+	overflow: hidden;
+	position: absolute;
+	white-space: nowrap;
+	/* added line */
+	width: 1px;
+}
+
+.invisibleHeader:focus {
+	position: relative;
+	clip: auto;
+	width: auto;
+	height: auto;
+	overflow: auto;
+}
