@@ -4,4 +4,4 @@
 
 Please visit the [live version here (github.io).](https://irvang.github.io/art-website/)
 
-To learn about CodeSquad, please vistit [CodeSquad.org.](http://codesquad.org)
+To learn about CodeSquad, please vistit [codesquad.org.](http://codesquad.org)
