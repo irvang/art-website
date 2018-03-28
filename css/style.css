@@ -31,6 +31,7 @@ body {
 #catchPhrase {
 	text-align: center;
 	font-size: 1.3rem;
+	font-style: italic;
 }
 
 /* H4s INSIDE HEADERS - these are now invisible*/
@@ -148,6 +149,11 @@ main article:nth-of-type(n) div.oppositeSide {
 	text-decoration: none;
 }
  
+.undecorate { 
+	text-decoration: none;
+	color: blue;
+}
+
 footer {
 	width: 30%;
 	margin: 0 auto;
