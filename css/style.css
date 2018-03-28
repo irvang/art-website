@@ -119,7 +119,7 @@ article.mainArticle > h2 {
 	padding: 0.5rem 1rem 1rem;
 	margin: inherit;
 	width: 45%;
-	/* text-align: center; */
+	text-align: justify;
 	flex: 1 0 200px;
 	max-width: 400px;
 	font-weight: 700;
