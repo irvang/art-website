@@ -1,5 +1,5 @@
 
-
+Changed footer to be loaded by JS. Should make footer responsive (flex);
 //====IMAGES
 
 http://maxpixel.freegreatpicture.com/Curve-Artwork-Abstract-Background-Wave-Green-757879
