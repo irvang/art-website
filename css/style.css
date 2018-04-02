@@ -60,14 +60,15 @@ ul.flex-container1 {
 	display: flex;
 	list-style-type: none;/* no bullets */
 	/* border: 2px solid blue; */
-	flex-wrap: wrap;
+	flex-wrap: nowrap;
 	/*apparently ul adds the indentation, therefore padding = 0 is needed*/
 	padding: 0;
 	/* border: 2px solid violet; */
 }
 
 .flex-container1 li {
-	flex: 1 0 auto;
+	/* flex: 1 0 auto; */
+	flex: 1 1 0;
 	/* border: 1px dashed aqua; */
 	text-align: center;
 }
@@ -80,6 +81,7 @@ li.nav-li a{
 	display: block;
 	background-color: #3b4e9a;
 	color: white;
+	white-space: nowrap;/*white-space nowrap prevents text from wrapping inside container*/
 }
 
 li.nav-li a:hover {
@@ -95,7 +97,7 @@ article {
 article.mainArticle > h2 {
 	/* background-color: red; */
 	color: blue;
-	font-size: 1rem;
+	font-size: 1.2rem;
 	display: inline;
 	margin-right: auto;
 	margin-left: 1.5rem;
@@ -122,6 +124,7 @@ article.mainArticle > h2 {
 	flex: 1 0 200px;
 	max-width: 400px;
 	font-weight: 700;
+	font-size: 1.2rem;
 	/* min-width: 400px */
 }
 
@@ -151,10 +154,11 @@ footer {
 .redecorate { 
 	text-decoration: none;
 	color: blue;
-
 	padding: 0 1% 0;
 	margin: 0 0.5%;
-	flex: 0 0 auto;
+	/* flex: 0 0 auto; */
+	flex: 1 1 0;
+	text-align: center;
 	font-weight: 700;
 	background-color: greenyellow;
 	/* border: 1px solid blue; */
